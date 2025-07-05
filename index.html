@@ -5,25 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>charity: water - Student Campaigns</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background-color: #eaf6fb;">
-  <!-- The header is inside a box for a friendly look -->
+<body>
+  <!-- Header section with logo and navigation, inside a box for modern look -->
   <header class="header box">
-    <!-- Logo on the left -->
     <div class="logo">
-      <!-- Use the yellow logo image for charity: water -->
       <img src="cw_logo.png" alt="charity: water logo" style="height:40px;">
     </div>
-    <!-- Navigation links in the center -->
     <nav class="nav">
       <a href="#">Join us</a>
       <a href="#">Our Story</a>
       <a href="#">Clean Water</a>
       <a href="#">FAQs</a>
     </nav>
-    <!-- Buttons on the right -->
     <div class="header-buttons">
       <a class="btn-yellow" href="#">Change Lives Now</a>
       <a class="sign-in" href="#">SIGN IN</a>
@@ -31,27 +28,74 @@
   </header>
 
   <main class="main">
-    <!-- Campaign section in a box -->
-    <section class="campaign box">
-      <!-- Left side: text and steps -->
-      <div class="text">
-        <h1>Be the generation to end the Global Water Crisis.</h1>
-        <p>Organize student-led campaigns to bring clean water to families in need, with <strong>100% of donations</strong> funding life-saving water solutions.</p>
-        <div class="steps">
-          <div class="step">Start a Campaign</div>
-          <div class="arrow">&rarr;</div>
-          <div class="step">Raise Funds</div>
-          <div class="arrow">&rarr;</div>
-          <div class="step">Bring Clean Water!</div>
+    <!-- Hero section: main message and image, styled as a modern box -->
+    <section class="hero box">
+      <!-- Left side: text and buttons -->
+      <div class="hero-left">
+        <!-- Headline grabs attention -->
+        <h1>
+          Be the generation to end the Global Water Crisis.
+        </h1>
+        <!-- Subheadline explains the mission -->
+        <p>
+          Organize student-led campaigns to bring clean water to families in need, with <b>100% of donations</b> funding life-saving water solutions.
+        </p>
+        <!-- Steps row: each step in a box, with arrows between -->
+        <div class="steps-row">
+          <div class="step-box">Start a Campaign</div>
+          <span class="arrow">&#8594;</span>
+          <div class="step-box">Raise Funds</div>
+          <span class="arrow">&#8594;</span>
+          <div class="step-box">Bring Clean Water!</div>
         </div>
-        <a href="#" class="btn-start">Start Your Campaign!</a>
+        <!-- Main call-to-action button -->
+        <a href="#" class="btn-yellow">Start Your Campaign!</a>
       </div>
-      <!-- Right side: campaign image -->
-      <div class="image">
-        <img src="campaign-photo.jpg" alt="People collecting clean water" style="border-radius:8px;">
+      <!-- Right side: image -->
+      <div class="hero-right">
+        <!-- Use the requested image for the hero section -->
+        <img src="watershor.jpg" alt="Collecting clean water">
+      </div>
+    </section>
+
+    <!-- Modern merged info box under hero -->
+    <section class="info-merged box">
+      <div class="info-columns">
+        <!-- Our Story -->
+        <div class="info-col">
+          <h2>Our Story</h2>
+          <p>
+            charity: water is a nonprofit organization bringing clean and safe drinking water to people in developing countries.
+            We believe everyone deserves access to clean water. Join us to make a difference!
+          </p>
+        </div>
+        <!-- Impact Story -->
+        <div class="info-col impact-highlight">
+          <h2>Real Impact: Meet Amina</h2>
+          <div class="impact-content">
+            <img src="impact-amina.jpg" alt="Amina smiling with clean water" class="impact-img">
+            <div class="impact-text">
+              <p>
+                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well right in the center of the community. Now, Amina can spend more time in school and with her friends!
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- CTA/Donate -->
+        <div class="info-col cta-highlight">
+          <h2>Ready to Help?</h2>
+          <p>
+            Start your own campaign or donate today to help bring clean water to those in need.
+          </p>
+          <a href="#" class="btn-yellow">Get Involved</a>
+          <h2 style="margin-top:24px;">Make a Difference Today</h2>
+          <p>
+            Your donation helps bring clean and safe water to more families like Amina's. Every gift, big or small, changes lives.
+          </p>
+          <a href="#" class="btn-donate">Donate Now</a>
+        </div>
       </div>
     </section>
   </main>
-
 </body>
 </html>
