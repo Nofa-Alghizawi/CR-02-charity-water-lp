@@ -40,12 +40,14 @@ body {
   padding: 28px;
   max-width: 950px;
   box-shadow: 0 4px 24px rgba(46,157,247,0.10); /* Softer, bigger shadow for depth */
-  transition: box-shadow 0.2s;
+  transition: all 0.4s ease; /* Smooth transitions for all properties */
+  transform: translateY(0);   /* Initial position for smooth animations */
 }
 
 /* Add a gentle hover effect to boxes for interactivity */
 .box:hover {
-  box-shadow: 0 8px 32px rgba(46,157,247,0.18);
+  box-shadow: 0 12px 40px rgba(46,157,247,0.20);
+  transform: translateY(-3px); /* Subtle lift effect */
 }
 
 /* Center CTA and main action buttons, and make CTA button smaller */
@@ -107,6 +109,12 @@ body {
 .logo img {
   height: 44px;
   filter: drop-shadow(0 2px 4px #ffe7a1);
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.logo img:hover {
+  transform: scale(1.05) rotate(-2deg); /* Playful hover effect */
+  filter: drop-shadow(0 4px 8px #ffb800);
 }
 
 /* Style for the charity: water text next to the logo */
@@ -118,6 +126,12 @@ body {
   font-size: 1.1rem;                        /* Easy-to-read size for beginners */
   letter-spacing: 0.5px;                    /* Slight spacing for clarity */
   line-height: 1;                           /* Tighter line height for better alignment */
+  transition: all 0.3s ease;               /* Smooth transitions */
+}
+
+.charity-water-text:hover {
+  color: #217fc2; /* Change to blue on hover */
+  transform: translateX(2px); /* Subtle movement */
 }
 
 /* Navigation links */
@@ -135,12 +149,16 @@ body {
   margin: 0; /* Removed extra margin since we're using gap */
   font-size: 1.05rem;
   letter-spacing: 0.5px;
-  transition: color 0.2s;
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
   padding: 8px 12px; /* Added padding for better click targets */
+  border-radius: 8px; /* Rounded corners for hover effect */
+  position: relative; /* For pseudo-element effects */
 }
 
 .nav a:hover {
   color: var(--yellow-dark);
+  background-color: rgba(255, 201, 7, 0.1); /* Subtle background highlight */
+  transform: translateY(-1px); /* Subtle lift effect */
 }
 
 /* Header buttons: arrange in a row, center vertically, and keep spacing even */
@@ -169,9 +187,10 @@ body {
   cursor: pointer;
   border: none;
   text-decoration: none;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease; /* Enhanced transitions */
   margin: 0;                 /* Remove any extra margin */
   width: auto;               /* Override the block button width */
+  transform: translateY(0);  /* Initial position for animations */
 }
 
 /* Solid yellow for Change Lives Now header button */
@@ -187,15 +206,19 @@ body {
   border: 2px solid #2E9DF7;
 }
 
-/* Hover effects for header buttons */
+/* Enhanced hover effects for header buttons */
 .header-buttons .btn-yellow:hover {
   background: #e6b800;
+  transform: translateY(-2px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 6px 16px rgba(255,201,7,0.3);
 }
 
 .header-buttons .sign-in:hover {
   background: #A7F3F7;
   color: #217fc2;
   border-color: #217fc2;
+  transform: translateY(-2px) scale(1.02); /* Lift and slight scale */
+  box-shadow: 0 6px 16px rgba(46,157,247,0.3);
 }
 
 /* Main content area */
@@ -285,12 +308,56 @@ body {
   font-family: var(--heading-font);
   box-shadow: 0 2px 8px rgba(46,157,247,0.10);
   font-size: 1.05rem;
+  transition: all 0.3s ease;   /* Smooth transitions */
+  transform: translateY(0);    /* Initial position */
+}
+
+/* Keyframe animations for enhanced user experience */
+@keyframes gentle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Add subtle floating animation to step boxes */
+.step-box {
+  animation: float 3s ease-in-out infinite;
+}
+
+.step-box:nth-child(2) {
+  animation-delay: 0.5s; /* Stagger the animation */
+}
+
+.step-box:nth-child(4) {
+  animation-delay: 1s; /* Stagger the animation for third step */
+}
+
+/* Add gentle pulse to main CTA buttons */
+.hero .btn-yellow {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+.step-box:hover {
+  transform: translateY(-2px) scale(1.05); /* Lift and scale on hover */
+  box-shadow: 0 6px 16px rgba(46,157,247,0.25);
+  background: #217fc2; /* Darker blue on hover */
 }
 
 .arrow {
   font-size: 1.5rem;
   color: #217fc2; /* Soft, modern blue for arrows */
   margin-right: 8px;
+  transition: all 0.3s ease; /* Animate arrows too */
+}
+
+.arrow:hover {
+  transform: translateX(3px); /* Subtle movement to indicate direction */
+  color: #1565c0;
 }
 
 /* Main call-to-action button */
@@ -322,6 +389,13 @@ body {
   box-shadow: 0 6px 32px rgba(46,157,247,0.18);
   border: none;
   background: #fff;
+  transition: all 0.4s ease;   /* Smooth transitions */
+  transform: scale(1);         /* Initial scale */
+}
+
+.hero-right img:hover {
+  transform: scale(1.02) rotate(1deg); /* Subtle scale and rotation */
+  box-shadow: 0 12px 48px rgba(46,157,247,0.25);
 }
 
 /* Info/Story/CTA columns under hero */
@@ -363,8 +437,8 @@ body {
 
 /* Enhanced hover effect for info columns */
 .info-col:hover {
-  box-shadow: 0 8px 32px rgba(46,157,247,0.20);
-  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 12px 40px rgba(46,157,247,0.25);
+  transform: translateY(-4px) scale(1.01); /* Enhanced lift and slight scale */
 }
 
 /* Highlight impact and CTA columns for visual interest */
@@ -389,6 +463,13 @@ body {
   font-weight: bold;
   margin-bottom: 18px;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.hero h1:hover {
+  color: #217fc2; /* Change color on hover */
+  transform: translateY(-1px); /* Subtle lift */
+  text-shadow: 0 4px 12px rgba(33, 127, 194, 0.2);
 }
 
 .hero h2,
@@ -400,6 +481,12 @@ body {
   margin-bottom: 10px;
   margin-top: 0;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.info-col h2:hover {
+  color: #217fc2; /* Blue on hover */
+  transform: translateX(3px); /* Subtle movement */
 }
 
 .hero p,
@@ -525,11 +612,24 @@ body {
   box-shadow: 0 4px 12px rgba(46,157,247,0.15);
   border: 2px solid #e6f3ff;
   flex-shrink: 0; /* Prevent image from shrinking */
+  transition: all 0.4s ease; /* Smooth transitions */
+  transform: scale(1);
+}
+
+.impact-img:hover {
+  transform: scale(1.05) rotate(2deg); /* Playful hover effect */
+  box-shadow: 0 8px 20px rgba(46,157,247,0.25);
+  border-color: #FFC907; /* Change border to yellow on hover */
 }
 
 .impact-text {
   flex: 1;
   line-height: 1.7; /* Better readability for the story text */
+  transition: all 0.3s ease;
+}
+
+.impact-text:hover {
+  transform: translateX(3px); /* Subtle movement on hover */
 }
 
 .impact-text p {
